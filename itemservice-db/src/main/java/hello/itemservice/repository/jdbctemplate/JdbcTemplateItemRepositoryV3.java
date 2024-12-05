@@ -101,6 +101,6 @@ public class JdbcTemplateItemRepositoryV3 implements ItemRepository {
     }
 
     private RowMapper<Item> itemRowMapper() {
-        return BeanPropertyRowMapper.newInstance(Item.class);
+        return BeanPropertyRowMapper.newInstance(Item.class); // camel case 변환 지원
     }
 }
