@@ -6,9 +6,11 @@ import hello.itemservice.repository.mybatis.MyBatisItemRepository;
 import hello.itemservice.service.ItemService;
 import hello.itemservice.service.ItemServiceV1;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+@Slf4j
 @Configuration
 @RequiredArgsConstructor
 public class MybatisConfig {
@@ -17,6 +19,7 @@ public class MybatisConfig {
 
     @Bean
     public ItemService itemService() {
+        log.info("itemMapper class: {}", itemMapper.getClass());
         return new ItemServiceV1(itemRepository());
     }
 
