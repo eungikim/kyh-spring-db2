@@ -56,6 +56,8 @@ class ItemRepositoryTest {
         assertThat(findItem).isEqualTo(savedItem);
     }
 
+    //Jpa 를 사용할경우 테스트는 롤백하기 때문에 update 쿼리가 찍히지 않는다
+    // (JPA 가 DB 를 수정하지 않고 내부적으로 들고 있다가 끝남) @Commit 추가시 확인 가능
     @Test
     void updateItem() {
         //given
