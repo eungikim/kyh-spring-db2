@@ -26,7 +26,11 @@ public class InternalCallV1Test {
     @Test
     void internalCall() {
         callService.internal();
-        callService.internalV2();
+    }
+
+    @Test
+    void internalPrivateCall() {
+        callService.internalPrivate();
     }
 
     @Test
@@ -57,7 +61,7 @@ public class InternalCallV1Test {
         }
 
         @Transactional
-        private void internalV2() {
+        private void internalPrivate() {
             // 접근제한자 트랜잭션 무시 확인
             // 스프링부트 3.0 부터는 'protected','package-visible'(default 접근제한자)에도 트랜잭션이 적용된다
             log.info("call internal");
