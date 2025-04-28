@@ -14,7 +14,7 @@ import java.util.Optional;
 public class LogRepository {
     private final EntityManager em;
 
-//    @Transactional
+    @Transactional
     public void save(Log logMessage) {
         log.info("Log 저장");
         em.persist(logMessage);
