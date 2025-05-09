@@ -56,7 +56,7 @@ public class JdbcTemplateItemRepositoryV3 implements ItemRepository {
                 .addValue("itemName", updateParam.getItemName())
                 .addValue("price", updateParam.getPrice())
                 .addValue("quantity", updateParam.getQuantity())
-                .addValue("id", itemId); // DTO 에 id 가 없기 떄문에 다른 구현체를 사용했다.
+                .addValue("id", itemId); // DTO 에 id 가 없기 떄문에 BeanPropertySqlParameterSource 가 아닌 다른 구현체를 사용했다.
         template.update(sql, param);
     }
 

@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Slf4j
-@Repository
+@Repository // PersistenceException 예외가 DataAccessException 으로 변경된다
 @Transactional
 public class JpaItemRepository implements ItemRepository {
 

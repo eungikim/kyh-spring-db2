@@ -21,7 +21,7 @@ class ItemRepositoryTest {
 
     @Autowired
     ItemRepository itemRepository;
-    /*
+    /* @Transactional 으로 정상화
     @Autowired
     PlatformTransactionManager transactionManager;
     TransactionStatus status;
